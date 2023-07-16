@@ -1,0 +1,12 @@
+.note-card-container {
+  padding: 20px;
+  background-color: #176b87;
+
+  .card-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px;
+    padding: 0px;
+  }
+}

@@ -1,0 +1,26 @@
+.add-note-container {
+  width: 30%;
+  height: 100vh;
+  background: linear-gradient(
+    90deg,
+    rgba(7, 25, 82, 1) 0%,
+    rgba(10, 42, 43, 1) 100%
+  );
+  overflow-y: hidden;
+  overflow-y: auto;
+
+  .add-note-label-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .add-note-form-detail-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .scroll {
+  }
+}
