@@ -6,7 +6,7 @@
     rgba(7, 25, 82, 1) 0%,
     rgba(10, 42, 43, 1) 100%
   );
-  overflow-y: hidden;
+  overflow: hidden;
   overflow-y: auto;
 
   .add-note-label-container {
