@@ -7,28 +7,24 @@ import NoteFormContainer from "./component/NoteForm/Note-Form-Container";
 import "./App.css";
 
 function App() {
-  const [home, setHome] = useState("");
+  const [noteList, setNotesList] = useState([]);
 
   const getDatas = async () => {
-    const response = await axios.get("http://localhost:3001/getData");
-    setHome(response.data);
+    const response = await axios.get("http://localhost:3001/api/v1/notes");
+    const data = await response.data;
+    console.log("data", data);
+    setNotesList(data);
   };
 
   useEffect(() => {
-    // fetch("/api")
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     setHome(data.json());
-    //     console.log(data);
-    //   });
     getDatas();
   }, []);
+
   return (
     <div className="main-container">
-      <p>{home}</p>
-      <UserDetailContainer />
-      <AddNoteContainer />
-      <NoteFormContainer />
+      <UserDetailContainer note={noteList} />
+      <AddNoteContainer note={noteList} />
+      <NoteFormContainer note={noteList} />
     </div>
   );
 }

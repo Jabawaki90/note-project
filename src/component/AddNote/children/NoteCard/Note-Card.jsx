@@ -1,18 +1,15 @@
 import React from "react";
 import "./Note-Card.css";
 
-const NoteCard = () => {
+const NoteCard = ({ id, category, content, date, title }) => {
   return (
     <div className="note-card-container">
       <div className="card-header">
-        <p>TRAVEL</p>
-        <p>11/12/2023</p>
+        <p>{category}</p>
+        <p>{date}</p>
       </div>
-      <h3>Trip to the capital</h3>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at
-        commodo lectus. Sed eu massa ullamcorper, congue diam non
-      </p>
+      <h3>{title}</h3>
+      <p>{content.substring(1, 140) + " ..."}</p>
     </div>
   );
 };

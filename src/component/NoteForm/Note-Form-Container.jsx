@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import "./Note-Form-Container.css";
 
-const NoteFormContainer = () => {
+const NoteFormContainer = (props) => {
   const [value, setValue] = useState("");
 
+  useEffect(() => {
+    setValue(props.note[0]?.content);
+    console.log("value", value);
+  }, []);
+
+  console.log("value", value);
   var toolbarOptions = [
     ["bold", "italic", "underline", "strike"], // toggled buttons
     ["blockquote", "code-block"],
@@ -35,7 +41,7 @@ const NoteFormContainer = () => {
         modules={module}
         theme="snow"
         value={value}
-        onChange={setValue}
+        onChange={(e) => setValue(e)}
         style={{ height: "60%", color: "#000" }}
       />
     </div>
